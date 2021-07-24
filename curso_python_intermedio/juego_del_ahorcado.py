@@ -33,7 +33,7 @@ while True:
         print(f"La palabra era '{word}")
         print("Perdiste!")
         break
-    letter = input("Ingresa una letra: ")
+    letter = input("Ingresa una letra: ").lower()
     if letter in discovered:
         discovered[letter]=True
     else:

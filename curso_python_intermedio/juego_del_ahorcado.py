@@ -30,7 +30,7 @@ while True:
     checkpoint(discovered)
     if attempts == len(word):
         os.system("cls")
-        print(f"La palabra era '{word}")
+        print(f"La palabra era '{word}'")
         print("Perdiste!")
         break
     letter = input("Ingresa una letra: ").lower()

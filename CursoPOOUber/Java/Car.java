@@ -6,11 +6,11 @@ public class Car {
     private Account driver;
     private int passenger;
 
-    public Car(int id, String license, Account driver, int passenger) {
-        this.id = id;
+    public Car(String license, Account driver) {
+        // this.id = id;
         this.license = license;
         this.driver = driver;
-        this. passenger = passenger;
+        // this. passenger = passenger;
     }
 
     public int getId() {
@@ -41,6 +41,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car licensed: "+this.license+", Driver: "+this.driver.getName();
+        return "Car licensed: "+this.license+", Driver: "+this.driver.getName() +", Passenger: "+this.passenger;
     }
 }

@@ -27,7 +27,8 @@ class ExplicitWaitTests(unittest.TestCase):
 
         WebDriverWait(self.driver, 10).until(EC.title_contains('Create New Customer Account'))
 
-
-
     def tearDown(self):
         self.driver.quit()
+
+if __name__ == '__main__':
+    unittest.main()

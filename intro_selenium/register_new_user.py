@@ -46,6 +46,9 @@ class RegisterNewUser(unittest.TestCase):
         password.send_keys('Test')
         confirm_password.send_keys('Test')
         submit_button.click()
-        
+
     def tearDown(self):
         self.driver.quit()
+
+if __name__ == '__main__':
+    unittest.main()

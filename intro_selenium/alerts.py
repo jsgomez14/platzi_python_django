@@ -1,6 +1,5 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.support.ui import Select
 
 class CompareProducts(unittest.TestCase):
 
@@ -29,6 +28,8 @@ class CompareProducts(unittest.TestCase):
 
         alert.accept()
 
-
     def tearDown(self):
         self.driver.quit()
+
+if __name__ == '__main__':
+    unittest.main()

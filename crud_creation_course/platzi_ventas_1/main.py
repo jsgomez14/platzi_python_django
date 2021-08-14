@@ -7,7 +7,6 @@ CLIENT_SCHEMA = ['uid','name','company','email','position']
 clients = []
 
 def _initialize_clients():
-    #TODO: create if it doesn't exists
     with open(CLIENT_TABLE, 'r') as file:
         reader = csv.DictReader(file, fieldnames=CLIENT_SCHEMA)
 

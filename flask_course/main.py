@@ -1,21 +1,12 @@
-from flask import Flask,request,make_response,redirect,render_template,url_for,flash,session
-from flask_bootstrap import Bootstrap
-from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired
+from flask import request,make_response,redirect,render_template,url_for,flash,session
 import unittest
 
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
+from app import create_app
+from app.forms import LoginForm
 
-app.config['SECRET_KEY'] = 'HIPER SECRET'
+app = create_app()
 
 todos = ['TODO 1', 'TODO 2', 'TODO 3']
-
-class LoginFrom(FlaskForm):
-    username = StringField('Nombre de usuario', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Enviar')
 
 @app.cli.command()
 def test():
@@ -41,7 +32,7 @@ def index():
 @app.route('/hello', methods=['GET', 'POST'])
 def hello():
     user_ip = session.get('user_ip')
-    login_form = LoginFrom()
+    login_form = LoginForm()
     username = session.get('username')
     context = {
         'user_ip': user_ip,

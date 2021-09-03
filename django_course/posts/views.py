@@ -43,4 +43,4 @@ def list_posts(request):
         request (HttpRequest): HttpRequest
     """
     global posts
-    return render(request, 'feed.html', {'posts', posts})
+    return render(request, 'feed.html', {'posts': posts})
